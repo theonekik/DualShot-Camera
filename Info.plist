@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Cinematic Mode (portrait depth blur) opt-in. With this key the app is
+	     eligible for the Portrait Effect; the effect itself follows the
+	     system Control Center toggle (AVCaptureDevice.portraitEffectEnabled). -->
+	<key>NSCameraPortraitEffectEnabled</key>
+	<true/>
+</dict>
+</plist>
