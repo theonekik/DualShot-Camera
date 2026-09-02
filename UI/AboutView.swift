@@ -14,8 +14,8 @@ struct AboutView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(CameraSessionModel.self) private var model
 
-    /// No Ads Studio by TheOneKiK
-    private let creditURL = URL(string: "https://github.com/theonekik/DualShot-Camera")
+    /// TODO: replace with your support / credits URL.
+    private let creditURL = URL(string: "https://github.com/")
 
     var body: some View {
         NavigationStack {
@@ -76,10 +76,6 @@ struct AboutView: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 3)
                     .background(.white.opacity(0.08), in: Capsule())
-                Text("No Ads Studio by TheOneKiK")
-                    .font(.system(size: 11, weight: .medium, design: .rounded))
-                    .foregroundStyle(.orange.opacity(0.7))
-                    .padding(.top, 2)
             }
         }
     }
@@ -122,7 +118,7 @@ struct AboutView: View {
                 .foregroundStyle(.white.opacity(0.55))
             if let creditURL {
                 Link(destination: creditURL) {
-                    Label("No Ads Studio by TheOneKiK", systemImage: "link")
+                    Label("Credits & Feedback", systemImage: "link")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .foregroundStyle(.orange.opacity(0.9))
                 }
