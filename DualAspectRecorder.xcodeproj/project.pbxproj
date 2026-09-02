@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A1000010000000000000001 /* DualAspectRecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000001 /* DualAspectRecorderApp.swift */; };
+		0A1000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000002 /* ContentView.swift */; };
+		0A1000010000000000000003 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000003 /* CameraPreviewView.swift */; };
+		0A1000010000000000000004 /* FramingGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000004 /* FramingGuidesView.swift */; };
+		0A1000010000000000000005 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000005 /* CameraViewModel.swift */; };
+		0A1000010000000000000006 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000006 /* CameraManager.swift */; };
+		0A1000010000000000000007 /* RecordingWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000007 /* RecordingWriter.swift */; };
+		0A1000010000000000000008 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000008 /* ExportService.swift */; };
+		0A1000010000000000000009 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2000010000000000000009 /* PermissionManager.swift */; };
+		0A100001000000000000000A /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A200001000000000000000A /* PhotoLibraryService.swift */; };
+		0A100001000000000000000B /* ThermalMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A200001000000000000000B /* ThermalMonitor.swift */; };
+		0A100001000000000000000C /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A200001000000000000000C /* AppModels.swift */; };
+		0A100001000000000000000D /* DualAspectRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A200001000000000000000D /* DualAspectRecorderTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A9000010000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA000010000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A5000010000000000000001;
+			remoteInfo = DualAspectRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A2000010000000000000000 /* DualAspectRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualAspectRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2000010000000000000001 /* DualAspectRecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualAspectRecorderApp.swift; sourceTree = "<group>"; };
+		0A2000010000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0A2000010000000000000003 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		0A2000010000000000000004 /* FramingGuidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramingGuidesView.swift; sourceTree = "<group>"; };
+		0A2000010000000000000005 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		0A2000010000000000000006 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		0A2000010000000000000007 /* RecordingWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingWriter.swift; sourceTree = "<group>"; };
+		0A2000010000000000000008 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		0A2000010000000000000009 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		0A200001000000000000000A /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		0A200001000000000000000B /* ThermalMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalMonitor.swift; sourceTree = "<group>"; };
+		0A200001000000000000000C /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
+		0A200001000000000000000D /* DualAspectRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualAspectRecorderTests.swift; sourceTree = "<group>"; };
+		0A200001000000000000000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A200001000000000000000F /* DualAspectRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualAspectRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2000010000000000000010 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A3000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A3000010000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A4000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				0A4000010000000000000002 /* DualAspectRecorder */,
+				0A4000010000000000000007 /* DualAspectRecorderTests */,
+				0A2000010000000000000010 /* README.md */,
+				0A4000010000000000000008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000002 /* DualAspectRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				0A4000010000000000000003 /* App */,
+				0A4000010000000000000004 /* Views */,
+				0A4000010000000000000005 /* ViewModels */,
+				0A4000010000000000000006 /* Services */,
+				0A200001000000000000000E /* Info.plist */,
+			);
+			path = DualAspectRecorder;
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0A2000010000000000000001 /* DualAspectRecorderApp.swift */,
+				0A200001000000000000000C /* AppModels.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A2000010000000000000002 /* ContentView.swift */,
+				0A2000010000000000000003 /* CameraPreviewView.swift */,
+				0A2000010000000000000004 /* FramingGuidesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0A2000010000000000000005 /* CameraViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000006 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0A2000010000000000000006 /* CameraManager.swift */,
+				0A2000010000000000000007 /* RecordingWriter.swift */,
+				0A2000010000000000000008 /* ExportService.swift */,
+				0A2000010000000000000009 /* PermissionManager.swift */,
+				0A200001000000000000000A /* PhotoLibraryService.swift */,
+				0A200001000000000000000B /* ThermalMonitor.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000007 /* DualAspectRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A200001000000000000000D /* DualAspectRecorderTests.swift */,
+			);
+			path = DualAspectRecorderTests;
+			sourceTree = "<group>";
+		};
+		0A4000010000000000000008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A2000010000000000000000 /* DualAspectRecorder.app */,
+				0A200001000000000000000F /* DualAspectRecorderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A5000010000000000000001 /* DualAspectRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A6000010000000000000001 /* Build configuration list for PBXNativeTarget "DualAspectRecorder" */;
+			buildPhases = (
+				0A7000010000000000000001 /* Sources */,
+				0A3000010000000000000001 /* Frameworks */,
+				0A8000010000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DualAspectRecorder;
+			packageProductDependencies = (
+			);
+			productName = DualAspectRecorder;
+			productReference = 0A2000010000000000000000 /* DualAspectRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A5000010000000000000002 /* DualAspectRecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A6000010000000000000002 /* Build configuration list for PBXNativeTarget "DualAspectRecorderTests" */;
+			buildPhases = (
+				0A7000010000000000000002 /* Sources */,
+				0A3000010000000000000002 /* Frameworks */,
+				0A8000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A9000010000000000000001 /* PBXTargetDependency */,
+			);
+			name = DualAspectRecorderTests;
+			packageProductDependencies = (
+			);
+			productName = DualAspectRecorderTests;
+			productReference = 0A200001000000000000000F /* DualAspectRecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AA000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					0A5000010000000000000001 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					0A5000010000000000000002 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 0A5000010000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = 0A6000010000000000000003 /* Build configuration list for PBXProject "DualAspectRecorder" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A4000010000000000000001;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0A4000010000000000000008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A5000010000000000000001 /* DualAspectRecorder */,
+				0A5000010000000000000002 /* DualAspectRecorderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A8000010000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A8000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A7000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1000010000000000000001 /* DualAspectRecorderApp.swift in Sources */,
+				0A1000010000000000000002 /* ContentView.swift in Sources */,
+				0A1000010000000000000003 /* CameraPreviewView.swift in Sources */,
+				0A1000010000000000000004 /* FramingGuidesView.swift in Sources */,
+				0A1000010000000000000005 /* CameraViewModel.swift in Sources */,
+				0A1000010000000000000006 /* CameraManager.swift in Sources */,
+				0A1000010000000000000007 /* RecordingWriter.swift in Sources */,
+				0A1000010000000000000008 /* ExportService.swift in Sources */,
+				0A1000010000000000000009 /* PermissionManager.swift in Sources */,
+				0A100001000000000000000A /* PhotoLibraryService.swift in Sources */,
+				0A100001000000000000000B /* ThermalMonitor.swift in Sources */,
+				0A100001000000000000000C /* AppModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A7000010000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A100001000000000000000D /* DualAspectRecorderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A9000010000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A5000010000000000000001 /* DualAspectRecorder */;
+			targetProxy = 0A9000010000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AB000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		0AB000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AB000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = M8KAJP9B33;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DualAspectRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codexdemo.DualAspectRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0AB000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8KAJP9B33;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DualAspectRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codexdemo.DualAspectRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0AB000010000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codexdemo.DualAspectRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DualAspectRecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DualAspectRecorder";
+			};
+			name = Debug;
+		};
+		0AB000010000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codexdemo.DualAspectRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DualAspectRecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DualAspectRecorder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A6000010000000000000001 /* Build configuration list for PBXNativeTarget "DualAspectRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB000010000000000000003 /* Debug */,
+				0AB000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A6000010000000000000002 /* Build configuration list for PBXNativeTarget "DualAspectRecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB000010000000000000005 /* Debug */,
+				0AB000010000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A6000010000000000000003 /* Build configuration list for PBXProject "DualAspectRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB000010000000000000001 /* Debug */,
+				0AB000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AA000010000000000000001 /* Project object */;
+}
