@@ -1,10 +1,10 @@
-# Dual Aspect Recorder
+# DualShot Camera
 
 > **Your content, both ways. One take, zero ads.**
 >
 > — *No Ads Studio by TheOneKiK*
 
-Dual Aspect Recorder is a native SwiftUI + AVFoundation iPhone app that captures one high-quality 4K HEVC master recording and automatically produces both **16:9 landscape** and **9:16 portrait** videos — perfect for cross-platform social media publishing.
+DualShot Camera is a native SwiftUI + AVFoundation iPhone app that captures one high-quality 4K HEVC master recording and automatically produces both **16:9 landscape** and **9:16 portrait** videos — perfect for cross-platform social media publishing.
 
 <p align="center">
   <img src="screenshots/screenshot1.png" width="200" alt="Recording interface with framing guides">
