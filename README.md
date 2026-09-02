@@ -4,13 +4,9 @@
 >
 > — *No Ads Studio by TheOneKiK*
 
-DualShot Camera is a native SwiftUI + AVFoundation iPhone app that captures one high-quality 4K HEVC master recording and automatically produces both **16:9 landscape** and **9:16 portrait** videos — perfect for cross-platform social media publishing.
+DualShot Camera is a native SwiftUI + AVFoundation iPhone app that captures one high‑quality 4K HEVC master recording and simultaneously produces both **16:9 landscape** and **9:16 portrait** videos — perfect for cross‑platform social media publishing.
 
-<p align="center">
-  <img src="screenshots/screenshot2.png" width="200" alt="Camera preview with dual aspect guides">
-  <img src="screenshots/screenshot3.png" width="200" alt="Recording in progress">
-  <img src="screenshots/screenshot4.png" width="200" alt="Export and save flow">
-</p>
+---
 
 ## Why I Built This
 
@@ -20,70 +16,138 @@ So I built my own. It's my first iOS app, made for my own need, and I'm sharing 
 
 **No Ads Studio by TheOneKiK** isn't a company — it's a promise. This app will never have ads, analytics, trackers, or upsells. Just clean code that does one thing well.
 
+---
+
 ## Features
 
-- **Single master, dual output** — records one 4K HEVC video, exports landscape (16:9) and portrait (9:16) simultaneously
-- **Live framing guides** — white (landscape) and yellow dashed (portrait) overlays show crop boundaries without burning them into video
-- **Front/rear camera switch** — swap cameras before recording
-- **4K 60fps** — auto-selects highest-frame-rate 4K format on supported devices (Triple → DualWide → WideAngle fallback)
-- **HEVC hardware encoding** — efficient storage and quality
-- **Thermal monitoring** — warns on serious thermal pressure
-- **Orientation-aware** — correct rotation and mirroring for front camera
-- **No ads, no tracking, no internet permissions** — works fully offline, requests zero network access
+### Dual‑Stream Recording
+- Single AVCaptureSession delivers 4K (or 1080p) master frames to a Metal‑backed Core Image pipeline.
+- Each frame is crop‑rendered twice — once to a 16:9 landscape target, once to a 9:16 portrait target — via zero‑copy `CIImage(cvPixelBuffer:)` wrapping.
+- Both crops are written concurrently by two independent `AVAssetWriter` instances, PTS‑rebased and synchronised.
+- Audio (48 kHz AAC) is written to both tracks from a shared `AVCaptureAudioDataOutput`.
 
-## Requirements
+### HEVC Presets (A18‑tuned)
+| Preset    | Dimensions | fps | Target bitrate | Hard cap |
+|-----------|------------|-----|----------------|----------|
+| p1080_30  | 1920×1080  | 30  | 9 Mbps         | 9 Mbps   |
+| p1080_60  | 1920×1080  | 60  | 14 Mbps        | 14 Mbps  |
+| p4k_30    | 3840×2160  | 30  | 32 Mbps        | 32 Mbps  |
 
-- Xcode 26.2 or newer
-- iOS 18 or newer
-- iPhone 16 Pro or newer recommended
-- A physical iPhone is required (Simulator does not expose camera hardware)
+- `kVTCompressionPropertyKey_DataRateLimits` enforces a 1‑second window hard cap.
+- BT.709 color metadata; `allowFrameReordering = false` for low‑latency capture.
+- Key‑frame every 2 seconds.
 
-## Setup
+### Cinematic Mode (Portrait Effect)
+- Auto‑switches active format to a depth‑capable 1080p@30 format when the current high‑fps/4K format cannot render the effect.
+- The switch happens live inside an `AVCaptureSession` configuration transaction — the session never stops.
+- When the system Portrait Effect toggle (Control Center) is off, the request stays **pending**; a lightweight watcher completes the activation (format auto‑adjust, toast, pill state) the moment the user enables the effect.
+- Turning Cinematic off restores the user’s selected preset live.
 
-1. Open `DualAspectRecorder.xcodeproj` in Xcode
-2. Select the `DualAspectRecorder` target
-3. Set your Apple Development Team in Signing & Capabilities
-4. Build and run on a physical iPhone
-5. Grant Camera, Microphone, and Photos add-only permissions when prompted
+### Live Dual Preview
+- Two MTKView‑backed preview cards rendered with a Metal‑backed `CIContext` → sRGB pipeline.
+- **16:9 landscape** card (960×540) – top.
+- **9:16 portrait** card (540×960) – bottom.
+- Both cards update at the capture frame rate with zero‑copy texture wrap via `CVMetalTextureCache`.
 
-## Usage
+### Vertical Zoom (9:16 Portrait)
+- **3‑way cycle: 1.0× → 1.2× → 1.5× → 1.0×**, applied exclusively to the portrait crop.
+- The zoomed crop rect shrinks the 9:16 centred region by `1/scale`, then scales it back to the fixed target — delivering true optical‑reminiscent zoom.
+- Updates **live** on the preview card and is **baked into the recorded vertical `.mov`**.
+- The 16:9 landscape pipeline is never affected.
+- Compact glassmorphic pill at the top‑trailing corner of the portrait card.
 
-- The **rear camera** is selected by default
-- Tap the camera switch button before recording to use the **front camera**
-- The **white guide** shows the 16:9 landscape framing area
-- The **yellow dashed guide** shows the 9:16 portrait crop area
-- Tap **record** to capture a single master
-- Tap **stop** to finalize, export both versions, and save both files to Photos
+### Camera Switching (Front / Rear)
+- Live input swap inside a single `beginConfiguration/commitConfiguration` block — the session never stops.
+- Session preset is auto‑downgraded when the target camera cannot deliver the current resolution.
+- Front‑camera mirroring + 90° rotation are applied post‑commit.
 
-> Framing overlays are preview-only and are **not burned into** the exported videos.
+### Writer Pre‑warm
+- An `AVAssetWriter` session is started in the background as soon as preview starts (the long HEVC encoder negotiation takes ~8 s cold).
+- The record tap consumes the pre‑warmed session (~10–22 ms re‑warm on subsequent recordings).
+- Invalidated when pipeline targets change (preset, camera, cinematic, zoom).
+
+### Photos Integration
+- Every completed dual recording is automatically saved to the Photos library via `PHPhotoLibrary.shared().performChanges`.
+
+---
 
 ## Architecture
 
 ```
-DualAspectRecorderApp.swift       ── @main entry point
-├── AppModels.swift               ── Enums: CapturePosition, RecorderState, ExportAspect, AppError
-├── ContentView.swift             ── SwiftUI UI: camera preview, framing guides, record button
-├── CameraPreviewView.swift       ── UIViewRepresentable for AVCaptureVideoPreviewLayer
-├── FramingGuidesView.swift       ── White (16:9) + yellow dashed (9:16) overlay guides
-├── CameraViewModel.swift         ── @MainActor ObservableObject: state machine, lifecycle
-└── Services/
-    ├── CameraManager.swift       ── AVCaptureSession, front/rear switch, 4K60 config, orientation
-    ├── RecordingWriter.swift     ── Real-time HEVC AVAssetWriter (video + AAC audio)
-    ├── ExportService.swift       ── Offline AVMutableComposition + centered crop for both aspects
-    ├── PhotoLibraryService.swift ── Add-only PHPhotoLibrary save
-    ├── PermissionManager.swift   ── Camera/mic/Photos authorization
-    └── ThermalMonitor.swift      ── Observes thermal pressure, warns in UI
+AVCaptureSession (sessionQueue)
+    ├── AVCaptureVideoDataOutput (420v video‑range)
+    │       └── MetalDualCropPipeline (processingQueue, userInteractive)
+    │               └── DualRenderOutput × per frame
+    │                       ├── → previewFrames (persistent, UI‑safe, MainActor)
+    │                       └── → onRender (pool buffers → writer, if recording)
+    └── AVCaptureAudioDataOutput (audioQueue)
+            └── → DualAssetWriterEngine.appendAudio
+
+DualAssetWriterEngine (writeQueue, serial)
+    ├── AVAssetWriter (landscape, HEVC × 1080×1920)
+    └── AVAssetWriter (portrait, HEVC × 1920×1080)
 ```
 
-## Performance
+### Concurrency Model
+- **sessionQueue** (serial, .userInitiated) — AVCaptureSession configuration.
+- **processingQueue** (serial, .userInteractive) — pipeline render (Core Image).
+- **writeQueue** (serial) — AVAssetWriter appends.
+- **MainActor** — `@Observable CameraSessionModel` facade, SwiftUI views.
+- Thread‑safe flags: `Mutex<T>` from `Synchronization`.
 
-- **Single capture pipeline** — records one master, exports offline (avoids dual-encode thermal issues)
-- **HEVC hardware encoding** — efficient on Apple Silicon
-- **Adaptive bitrate** — 90 Mbps (4K), 35 Mbps (1080p), 16 Mbps (lower)
-- **Frame dropping** — drops late preview frames during recording to protect A/V sync
-- **Background processing** — recording and export on dedicated serial queues, not the main actor
-- **Minimal permissions** — Photos `.addOnly` authorization level only
+---
+
+## Requirements
+
+- **iOS 26.5** (Xcode 26.6, Swift 6.3.3)
+- **iPhone 16 / A18** family recommended (HEVC hardware encoder; Portrait Effect requires depth‑capable camera)
+- A physical iPhone is required (Simulator does not expose camera hardware)
+
+---
+
+## Project Structure
+
+```
+DualShot Camera.xcodeproj
+Info.plist                              # Permissions + Portrait Effect opt‑in
+DualShot Camera/
+    Core/Camera/
+        CameraState.swift               # Finite state machine (Idle…Error)
+        CameraStateMachine.swift        # Thread‑safe Mutex‑guarded machine
+        CameraEngineProtocol.swift      # Engine contract (nonisolated protocol)
+        CameraSessionEngine.swift       # AVCaptureSession + pipeline wiring
+        MetalDualCropPipeline.swift     # Core Image dual‑render pipeline
+        DualAssetWriterProtocol.swift
+        DualAssetWriterEngine.swift     # Dual AVAssetWriter management
+        DualRenderOutput.swift          # Crop targets + preview frame types
+        QualityPreset.swift             # 1080p30/60, 4K30 HEVC bitrates
+        DualRecording.swift             # Session / result value types
+        CameraEvent.swift               # Domain event enum
+        VerticalZoom.swift              # 1.0/1.2/1.5× zoom enum
+    UI/
+        CameraScreen.swift              # Root camera view
+        DualPreviewCard.swift           # Glassmorphic preview card chrome
+        DualPreviewMetalView.swift      # MTKView + Metal renderer wrapper
+        CameraSwitcher.swift            # Flip + Cinematic pill controls
+        QualitySelectorPill.swift       # Preset picker
+        RecordButton.swift              # Circular record/stop
+        RecordingHUD.swift              # Elapsed time + file size
+        Haptics.swift                   # Centralised haptic feedback
+    ContentView.swift                   # App entry: engine → model → UI
+    DualShot_CameraApp.swift            # @main App struct (fail‑soft engine)
+```
+
+---
+
+## Key Design Decisions
+- **420v (video‑range) camera input**: Core Image decodes YUV assuming video range; 420f (full‑range) caused ~50 % darkening.
+- **sRGB working/output color space** on `CIContext` + `AVCaptureDevice.activeColorSpace` = .sRGB + `automaticallyConfiguresCaptureDeviceForWideColor = false`.
+- **Pool‑backed recording buffers** (`poolDepth = 4`): bounded GPU memory (~80 MB peak for 4K); pool exhaustion drops frames instead of growing memory.
+- **Preview buffers are persistent, not pooled**: the UI can re‑read the latest crops without holding pool allocations.
+- No ads, no tracking, no internet permissions — works fully offline, requests zero network access.
+
+---
 
 ## License
 
-MIT — do whatever you want with it. No ads, no restrictions.
+MIT — see LICENSE file.
