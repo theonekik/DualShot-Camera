@@ -1,6 +1,8 @@
 # Dual Aspect Recorder
 
-> **Previously known as DualShot-Camera**
+> **Your content, both ways. One take, zero ads.**
+>
+> — *No Ads Studio by TheOneKiK*
 
 Dual Aspect Recorder is a native SwiftUI + AVFoundation iPhone app that captures one high-quality 4K HEVC master recording and automatically produces both **16:9 landscape** and **9:16 portrait** videos — perfect for cross-platform social media publishing.
 
@@ -11,6 +13,14 @@ Dual Aspect Recorder is a native SwiftUI + AVFoundation iPhone app that captures
   <img src="screenshots/screenshot4.png" width="200" alt="Export and save flow">
 </p>
 
+## Why I Built This
+
+I needed a simple, clean camera app that could record once and give me both landscape and portrait videos — without ads, without subscriptions, without tracking. Every app I found either wanted my data or tried to sell me something.
+
+So I built my own. It's my first iOS app, made for my own need, and I'm sharing it openly.
+
+**No Ads Studio by TheOneKiK** isn't a company — it's a promise. This app will never have ads, analytics, trackers, or upsells. Just clean code that does one thing well.
+
 ## Features
 
 - **Single master, dual output** — records one 4K HEVC video, exports landscape (16:9) and portrait (9:16) simultaneously
@@ -20,6 +30,7 @@ Dual Aspect Recorder is a native SwiftUI + AVFoundation iPhone app that captures
 - **HEVC hardware encoding** — efficient storage and quality
 - **Thermal monitoring** — warns on serious thermal pressure
 - **Orientation-aware** — correct rotation and mirroring for front camera
+- **No ads, no tracking, no internet permissions** — works fully offline, requests zero network access
 
 ## Requirements
 
@@ -76,4 +87,4 @@ DualAspectRecorderApp.swift       ── @main entry point
 
 ## License
 
-MIT
+MIT — do whatever you want with it. No ads, no restrictions.
