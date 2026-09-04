@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		3EA504E23032331600BAE08E /* DualShot Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DualShot Camera.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA504E23032331600BAE08E /* DualShot_Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualShot_Camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3EA504E43032331600BAE08E /* DualShot Camera */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DualShot Camera";
+			path = ".";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		3EA504E33032331600BAE08E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EA504E23032331600BAE08E /* DualShot Camera.app */,
+				3EA504E23032331600BAE08E /* DualShot_Camera.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			packageProductDependencies = (
 			);
 			productName = "DualShot Camera";
-			productReference = 3EA504E23032331600BAE08E /* DualShot Camera.app */;
+			productReference = 3EA504E23032331600BAE08E /* DualShot_Camera.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -184,6 +184,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -241,6 +242,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -256,7 +258,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M8KAJP9B33;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleExecutable = "$(EXECUTABLE_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
