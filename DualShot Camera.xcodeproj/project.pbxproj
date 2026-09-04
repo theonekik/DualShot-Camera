@@ -13,6 +13,12 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3EA504E43032331600BAE08E /* DualShot Camera */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				{
+					excludedFilePatterns = "Info.plist";
+					path = ".";
+				},
+			);
 			path = ".";
 			sourceTree = "<group>";
 		};
