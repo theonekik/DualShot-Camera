@@ -77,6 +77,10 @@ struct AboutView: View {
                     .font(.system(size: 11, weight: .medium, design: .rounded))
                     .foregroundStyle(.orange.opacity(0.7))
                     .padding(.top, 2)
+                Text("No ads. No tracking. No subscriptions.")
+                    .font(.system(size: 10, weight: .regular, design: .rounded))
+                    .foregroundStyle(.white.opacity(0.45))
+                    .padding(.top, 1)
             }
         }
     }
