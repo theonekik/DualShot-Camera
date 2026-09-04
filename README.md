@@ -6,6 +6,13 @@
 
 DualShot Camera is a native SwiftUI + AVFoundation iPhone app that captures one high‑quality 4K HEVC master recording and simultaneously produces both **16:9 landscape** and **9:16 portrait** videos — perfect for cross‑platform social media publishing.
 
+<p align="center">
+  <img src="screenshots/screenshot2.png" width="200" alt="Camera preview with dual aspect guides">
+  <img src="screenshots/screenshot3.png" width="200" alt="Recording in progress">
+  <img src="screenshots/screenshot4.png" width="200" alt="Export and save flow">
+  <img src="screenshots/app-on-homescreen.png" width="200" alt="App on iPhone home screen">
+</p>
+
 ---
 
 ## Why I Built This
