@@ -53,19 +53,16 @@ struct AboutView: View {
 
     private var header: some View {
         VStack(spacing: 10) {
-            Image(systemName: "camera.aperture")
-                .font(.system(size: 44))
-                .foregroundStyle(.white)
+            Image("AppIcon", label: Text("DualShot Camera"))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 84, height: 84)
-                .background(
-                    LinearGradient(
-                        colors: [.orange, .red],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    in: RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .strokeBorder(.white.opacity(0.15), lineWidth: 0.5)
                 )
-                .shadow(color: .orange.opacity(0.35), radius: 16, y: 6)
+                .shadow(color: .black.opacity(0.4), radius: 16, y: 6)
             VStack(spacing: 4) {
                 Text("DualShot Camera")
                     .font(.system(size: 22, weight: .bold, design: .rounded))
