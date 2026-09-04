@@ -956,9 +956,10 @@ public nonisolated final class CameraSessionEngine: NSObject, CameraEngineProtoc
         default:
             throw CameraError.invalidStateTransition(from: stateMachine.phase, to: .previewing)
         }
-        // Pre-warm the writer session in the background so the first record
-        // tap doesn't pay the multi-second AVAssetWriter/encoder startup.
-        await warmUpWriter()
+        // Pre-warm the writer session in the background (non-blocking) so the
+        // first record tap doesn't pay the multi-second AVAssetWriter/encoder
+        // startup. The preview starts immediately.
+        Task { await self.warmUpWriter() }
     }
 
     public func stopPreview() async {
