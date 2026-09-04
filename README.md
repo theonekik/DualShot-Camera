@@ -10,6 +10,7 @@ DualShot Camera is a native SwiftUI + AVFoundation iPhone app that captures one 
   <img src="screenshots/screenshot2.png" width="200" alt="Camera preview with dual aspect guides">
   <img src="screenshots/screenshot3.png" width="200" alt="Recording in progress">
   <img src="screenshots/screenshot4.png" width="200" alt="Export and save flow">
+  <img src="screenshots/screenshot-about.png" width="200" alt="About screen — No Ads Studio by TheOneKiK">
 </p>
 
 ---
