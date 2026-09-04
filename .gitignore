@@ -1,2 +1,21 @@
+# Xcode
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+*.moved-aside
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# macOS
 .DS_Store
-DualShot Camera.xcodeproj/xcuserdata/
+
+# Xcode build
+build/
+*.build/
