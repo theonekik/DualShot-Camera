@@ -53,7 +53,7 @@ struct AboutView: View {
 
     private var header: some View {
         VStack(spacing: 10) {
-            Image("AppIcon", label: Text("DualShot Camera"))
+            Image("AboutAppIcon", label: Text("DualShot Camera"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 84, height: 84)
