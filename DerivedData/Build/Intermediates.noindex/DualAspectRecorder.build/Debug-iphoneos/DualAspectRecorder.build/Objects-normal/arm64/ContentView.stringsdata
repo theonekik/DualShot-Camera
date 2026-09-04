@@ -1,0 +1,40 @@
+{
+  "source": "/Users/kpallikkara/Documents/Codex-Demo/DualAspectRecorder/Views/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Switch camera",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dual Aspect",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "Stop recording",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 122
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start recording",
+        "location": {
+          "startingColumn": 76,
+          "startingLine": 122
+        }
+      }
+    ]
+  },
+  "version": 1
+}

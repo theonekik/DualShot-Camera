@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'DualAspectRecorderTests' in project 'DualAspectRecorder'
+➜ Explicit dependency on target 'DualAspectRecorder' in project 'DualAspectRecorder'
+Target 'DualAspectRecorder' in project 'DualAspectRecorder' (no dependencies)

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/kpallikkara/Documents/Codex-Demo/DualAspectRecorder/Views/FramingGuidesView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "9:16",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 22
+        }
+      }
+    ]
+  },
+  "version": 1
+}

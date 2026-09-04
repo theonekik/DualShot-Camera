@@ -1,0 +1,19 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests-primary.dia",
+    "emit-module-dependencies" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests-primary-emit-module.dia",
+    "pch" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests-primary.swiftdeps"
+  },
+  "/Users/kpallikkara/Documents/Codex-Demo/DualAspectRecorderTests/DualAspectRecorderTests.swift" : {
+    "const-values" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.swiftconstvalues",
+    "dependencies" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.d",
+    "diagnostics" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.dia",
+    "index-unit-output-path" : "/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.o",
+    "llvm-bc" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.bc",
+    "object" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.o",
+    "swift-dependencies" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests.swiftdeps",
+    "swiftmodule" : "/Users/kpallikkara/Documents/Codex-Demo/DerivedData/Build/Intermediates.noindex/DualAspectRecorder.build/Debug-iphoneos/DualAspectRecorderTests.build/Objects-normal/arm64/DualAspectRecorderTests~partial.swiftmodule"
+  }
+}
