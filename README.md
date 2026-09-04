@@ -112,6 +112,47 @@ DualAssetWriterEngine (writeQueue, serial)
 
 ---
 
+## Installation — Build from Source
+
+No binary or TestFlight yet — you build it yourself (takes ~2 minutes):
+
+```bash
+git clone https://github.com/theonekik/DualShot-Camera.git
+open "DualShot Camera.xcodeproj"
+```
+
+1. In Xcode, select the **DualShot Camera** target → **Signing & Capabilities** → choose your **Team** (free Apple ID works — no paid developer account needed for local install)
+2. Connect your iPhone via cable, select it as the run destination
+3. **Product → Run** (⌘R) — grant Camera / Microphone / Photos **Add Only** when prompted
+4. The app installs as **DualShot Camera** on your home screen — no App Store needed
+
+> No CocoaPods, no SPM dependencies, no internet permission. Offline from first launch.
+
+---
+
+## Usage
+
+1. **Default (both on):** Launch → you see two live previews — **16:9 landscape (top)** and **9:16 portrait (bottom)**. Tap **Record** → both `.mov` files save to Photos automatically.
+2. **Portrait only:** Tap the **Horizontal Off** toggle — landscape card dims, only the vertical file is written.
+3. **Landscape only:** Tap **Vertical Off** — portrait card dims, only the horizontal file is written.
+4. **Zoom (portrait):** Tap the **1.0× pill** on the portrait card → cycles **1.0× → 1.2× → 1.5×** — live on preview and baked into the saved file.
+5. **Front / Rear:** Tap the **flip icon** — swaps camera live without stopping the session. Front preview is mirrored, saved file is not.
+6. **Cinematic (Portrait Effect):** Enable via **Control Center → Portrait Effect** (opts in via `Info.plist`). Pill shows **CINEMATIC**; falls back gracefully if hardware can't render it.
+7. **About:** Tap the **ⓘ** in the top bar → shows version, vertical scale status, and **No Ads Studio** credit.
+
+---
+
+## Reusing This Project
+
+**MIT Licensed** — do whatever you want. Fork it, ship it, strip it for parts.
+
+- **Fork → rename:** Change `CFBundleDisplayName` in `Info.plist` + AppIcon, pick a new bundle ID — it's yours.
+- **Use as a library:** `Core/Camera` is self-contained (Metal pipeline + dual writers + state machine). Copy that folder into your own app — no UI coupling.
+- **Commercial use allowed.** No attribution required, but a link back to `No Ads Studio by TheOneKiK` is appreciated.
+- **No binary to download** — intentionally source-only for transparency. When TestFlight is live, the link will appear here.
+
+---
+
 ## Project Structure
 
 ```
